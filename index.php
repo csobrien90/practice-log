@@ -17,4 +17,6 @@
 
 </body>
 
+<!-- JS goes here -->
+
 </html>
