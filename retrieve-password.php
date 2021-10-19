@@ -16,7 +16,7 @@
     <main>
         <form id="retrieve-password-form">
             <label for="email">Email:</label><input type="email" id="email" name="email" autocomplete="off"></input>
-            <input type="submit" id="login-submit">
+            <input type="submit" id="forgot-submit">
         </form>
         <a href="index.php">Back to login</a>
     </main>
@@ -27,6 +27,25 @@
 
 </body>
 
-<script></script>
+<script>
+    let submit = document.getElementById("forgot-submit");
+
+    let email = document.getElementById("email");
+
+    submit.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        //validate input format
+
+        fetch("api/forgot.php", {
+            method: "POST",
+            body: JSON.stringify({
+                "email": email.value
+            })
+        })
+            .then( res => res.json())
+            .then (data => console.log(data.message));
+    }); 
+</script>
 
 </html>

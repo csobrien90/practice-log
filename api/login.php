@@ -18,7 +18,7 @@
         //security measures on input
 
 
-        //query to find data
+        //query database
 
         $sql_username = "";
         $result_username = mysqli_query($con, $sql_username);
@@ -26,13 +26,11 @@
         $sql_password = "";
         $result_password = mysqli_query($con, $sql_password);
 
-
         //send back response in $response array:
-        //  - if username does not exist
-        //  - if username exists but password does not match
-        //  - if username exists and password matches -> acceptance code and real name of user
+            //if username does not exist
+            //if username exists but password does not match
+            //if username exists and password matches -> acceptance code and real name of user
         
-
         echo json_encode($response);
         mysqli_close($con);
 

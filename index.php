@@ -32,9 +32,26 @@
 </body>
 
 <script>
+    let submit = document.getElementById("login-submit");
 
-    //fetch (post) from login.php and change <main> to landing page if login is successful
+    let username = document.getElementById("username");
+    let password = document.getElementById("password");
 
+    submit.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        //validate input formats
+
+        fetch("api/login.php", {
+            method: "POST",
+            body: JSON.stringify({
+                "username": username.value,
+                "password": password.value 
+            })
+        })
+            .then( res => res.json())
+            .then (data => console.log(data.message));
+    }); 
 </script>
 
 </html>
