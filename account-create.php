@@ -14,15 +14,15 @@
     </header>
 
     <main>
-        <form id="login-form">
+        <form id="create-account-form">
+            <label for="name">Name:</label><input type="text" id="name" name="name" autocomplete="off"></input>
+            <label for="email">Email:</label><input type="email" id="email" name="email" autocomplete="off"></input>
             <label for="username">Username:</label><input type="text" id="username" name="username" autocomplete="off"></input>
             <label for="password">Password:</label><input type="password" id="password" name="password" autocomplete="off"></input>
+            <label for="confirm-password">Confirm Password:</label><input type="password" id="confirm-password" name="confirm-password" autocomplete="off"></input>
             <input type="submit" id="login-submit">
         </form>
 
-        <p>New user? <a href="account-create.php">Create an account.</a></p>
-        <p>Forgot password? <a href="retrieve-password.php">Retrieve your login info.</a></p>
-        
     </main>
 
     <footer>
