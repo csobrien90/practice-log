@@ -18,6 +18,7 @@
             <label for="email">Email:</label><input type="email" id="email" name="email" autocomplete="off"></input>
             <input type="submit" id="login-submit">
         </form>
+        <a href="index.php">Back to login</a>
     </main>
 
     <footer>

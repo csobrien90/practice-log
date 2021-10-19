@@ -31,6 +31,10 @@
 
 </body>
 
-<script></script>
+<script>
+
+    //fetch (post) from login.php and change <main> to landing page if login is successful
+
+</script>
 
 </html>

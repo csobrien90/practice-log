@@ -22,7 +22,7 @@
             <label for="confirm-password">Confirm Password:</label><input type="password" id="confirm-password" name="confirm-password" autocomplete="off"></input>
             <input type="submit" id="login-submit">
         </form>
-
+        <a href="index.php">Back to login</a>
     </main>
 
     <footer>
