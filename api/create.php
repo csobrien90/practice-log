@@ -1,7 +1,7 @@
 <?php
 
     //connect to database
-    $con = mysqli_connect("localhost", "root", "", "PRACTICE_LOG");
+    $con = mysqli_connect("localhost", "root", "", "practice_log");
     
     $response = array();
 
@@ -22,10 +22,10 @@
 
         //query database
 
-        $sql_email = "SELECT * FROM `users` WHERE 'email'='$email'";
+        $sql_email = "SELECT * FROM `users` WHERE email='$email'";
         $result_email = mysqli_query($con, $sql_email);
 
-        $sql_username = "SELECT * FROM `users` WHERE 'username'='$username'";
+        $sql_username = "SELECT * FROM `users` WHERE username='$username'";
         $result_username = mysqli_query($con, $sql_username);
 
         
@@ -41,7 +41,7 @@
 
             } else {    //else, add new user to database -> success message
                 
-                $sql_add = "INSERT INTO `table name`(`name`, `email`, `username`, `password`) VALUES ('$name','$email','$username','$password')";
+                $sql_add = "INSERT INTO `users`(`name`, `email`, `username`, `password`) VALUES ('$name','$email','$username','$password')";
                 $result = mysqli_query($con, $sql_add);
                 
                 if ($result) {
@@ -50,7 +50,6 @@
                     $response["message"] = "User creation failed";
                 }
             }
-
 
         echo json_encode($response);
         mysqli_close($con);
