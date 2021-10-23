@@ -1,7 +1,7 @@
 <?php
 
     //connect to database
-    $con = mysqli_connect("localhost", "root", "", "API_DATA");
+    $con = mysqli_connect("localhost", "root", "", "practice_log");
     
     $response = array();
 
@@ -19,12 +19,20 @@
 
         //query database
 
-        $sql_email = "";
-        $result = mysqli_query($con, $sql_email);
+        $sql_email = "SELECT * FROM `users` WHERE email='$email'";
+        $result_email = mysqli_query($con, $sql_email);
         
         //send back response in response array
-            //if email does not exist -> prompt create user page
-            //else, send username and password to $email and send page success message
+
+        if (mysqli_num_rows($result_email) == 0) {  //if email does not exist -> prompt create user page
+            
+            $response["message"] = "No users with that email address";
+
+        } else {    //else, send username and password to $email and send page success message
+            
+            $response["message"] = "Reminder email has been sent";
+        
+        }
 
         echo json_encode($response);
         mysqli_close($con);
