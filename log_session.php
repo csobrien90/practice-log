@@ -16,6 +16,10 @@
     <main>
         <button>Start Session</button>
         <p id="stopwatch"></p>
+        <form id="submit-session">
+            <label for="notes">Notes: </label><textarea id="notes"></textarea>
+            <input type="submit">
+        </form>
         <a href="launch.php">Back to Home Page</a>
     </main>
 
@@ -30,7 +34,7 @@
     let stopwatch = document.querySelector('#stopwatch');
     button.addEventListener('click', () => {
         if(button.innerHTML === "Start Session") {
-            button.innerHTML = "Stop Session";
+            button.innerHTML = "Pause Session";
             stopwatch.innerHTML = "timer goes here";
         } else {
             button.innerHTML = "Start Session";
