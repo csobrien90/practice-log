@@ -14,7 +14,9 @@
     </header>
 
     <main>
-        
+        <button>Start Session</button>
+        <p id="stopwatch"></p>
+        <a href="launch.php">Back to Home Page</a>
     </main>
 
     <footer>
@@ -24,7 +26,17 @@
 </body>
 
 <script>
-    
+    let button = document.querySelector('button');
+    let stopwatch = document.querySelector('#stopwatch');
+    button.addEventListener('click', () => {
+        if(button.innerHTML === "Start Session") {
+            button.innerHTML = "Stop Session";
+            stopwatch.innerHTML = "timer goes here";
+        } else {
+            button.innerHTML = "Start Session";
+            stopwatch.innerHTML = "";
+        }
+    })
 </script>
 
 </html>

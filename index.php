@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Practice Log</title>
+    <title>Login | Practice Log</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -23,6 +23,7 @@
         <p>New user? <a href="account-create.php">Create an account.</a></p>
         <p>Forgot password? <a href="retrieve-password.php">Retrieve your login info.</a></p>
         
+        <a href="launch.php">TEMPORARILY BYPASS LOGIN</a>
     </main>
 
     <footer>
