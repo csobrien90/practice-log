@@ -16,9 +16,9 @@
     <main>
         <button>Start Session</button>
         <p id="stopwatch"></p>
-        <form id="submit-session">
+        <form id="session">
             <label for="notes">Notes: </label><textarea id="notes"></textarea>
-            <input type="submit" value="Log Session">
+            <input type="submit" value="Log Session" id="submit-session">
         </form>
         <a href="launch.php">Back to Home Page</a>
     </main>
@@ -30,36 +30,69 @@
 </body>
 
 <script>
-    
-
 
     let button = document.querySelector('button');
     let stopwatch = document.querySelector('#stopwatch');
+    let submit = document.querySelector('#submit-session');
+    let notes = document.querySelector('#notes');
     let timer;
     let now;
     let startDate;
+    let restartTime = 0;
+
+    function formatSeconds(time) {
+        let hours = '00';
+        let seconds = (time % 60).toString().padStart(2, '0');
+        let minutes = Math.floor(time / 60).toString().padStart(2, '0');
+        if (minutes > 59) {
+            hours = Math.floor(minutes / 60).toString().padStart(2, '0');
+            minutes = (minues % 60).toString().padStart(2, '0');
+        }
+
+        return `${hours}:${minutes}:${seconds}`; 
+    }
 
     button.addEventListener('click', () => {
-        
-        if(!startDate) {startDate = new Date()};
 
         if(button.innerHTML === "Start Session") {
             button.innerHTML = "Pause Session";
-            
+            startDate = new Date()
+
             if(!timer) {
                 timer = setInterval(() => {
                     now = new Date();
-                    elapsedTime = Math.floor((now - startDate)/1000);
-                    stopwatch.innerHTML = elapsedTime;    
+                    elapsedTime = restartTime + Math.floor((now - startDate)/1000);
+                    stopwatch.innerHTML = formatSeconds(elapsedTime);    
                 }, 1000);
             }
 
         } else {
+            restartTime = elapsedTime;
             button.innerHTML = "Start Session";
             clearInterval(timer);
             timer = null;
         }
     })
+
+    submit.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        //validate input formats
+
+        fetch("api/log.php", {
+            method: "POST",
+            body: JSON.stringify({  //this json is not all properly assigned yet...see db row 1 for specific failings
+                "username": "testuser",
+                "date": startDate.toDateString(),
+                "start_time": startDate.toTimeString(),
+                "stop_time": now.toTimeString(),
+                "total_time": stopwatch.innerHTML,
+                "notes": notes.value
+            })
+        })
+            .then( res => res.json())
+            .then (data => console.log(data.message));
+    }); 
 
 </script>
 
