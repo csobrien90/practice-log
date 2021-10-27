@@ -18,7 +18,7 @@
         <p id="stopwatch"></p>
         <form id="submit-session">
             <label for="notes">Notes: </label><textarea id="notes"></textarea>
-            <input type="submit">
+            <input type="submit" value="Log Session">
         </form>
         <a href="launch.php">Back to Home Page</a>
     </main>
@@ -30,17 +30,37 @@
 </body>
 
 <script>
+    
+
+
     let button = document.querySelector('button');
     let stopwatch = document.querySelector('#stopwatch');
+    let timer;
+    let now;
+    let startDate;
+
     button.addEventListener('click', () => {
+        
+        if(!startDate) {startDate = new Date()};
+
         if(button.innerHTML === "Start Session") {
             button.innerHTML = "Pause Session";
-            stopwatch.innerHTML = "timer goes here";
+            
+            if(!timer) {
+                timer = setInterval(() => {
+                    now = new Date();
+                    elapsedTime = Math.floor((now - startDate)/1000);
+                    stopwatch.innerHTML = elapsedTime;    
+                }, 1000);
+            }
+
         } else {
             button.innerHTML = "Start Session";
-            stopwatch.innerHTML = "";
+            clearInterval(timer);
+            timer = null;
         }
     })
+
 </script>
 
 </html>
