@@ -15,11 +15,14 @@
 
     <main>
         
-        <select name="time-range">
-            <option value="last-week">Last 7 Days</option>
-            <option value="last-month">Last 30 Days</option>
-            <option value="all">Full History</option>
-        </select>
+        <form>
+            <select name="time-range">
+                <option value="last-week">Last 7 Days</option>
+                <option value="last-month">Last 30 Days</option>
+                <option value="all">Full History</option>
+            </select>
+            <input type="submit" value="Load History" id="load-history">
+        </form>
 
         <table id="log-table">
             <tr>
@@ -49,6 +52,24 @@
 </body>
 
 <script>
+
+let submit = document.getElementById("load-history");
+
+submit.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    //validate input formats
+
+    fetch("api/history.php", {
+        method: "POST",
+        body: JSON.stringify({
+            "username": "testuser"
+        })
+    })
+        .then( res => res.json())
+        .then (data => console.log(data));
+}); 
+
     
 </script>
 
