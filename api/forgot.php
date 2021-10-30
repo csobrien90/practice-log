@@ -25,11 +25,11 @@
         
         //send back response in response array
 
-        if (mysqli_num_rows($result_email) == 0) {  //if email does not exist -> prompt create user page
+        if (mysqli_num_rows($result_email) == 0) {  //if email does not exist, prompt create user page
             
-            $response["message"] = "No users found with that email address";
+            $response["message"] = "No users found with that email address. <a href='account_create.php'>Create a new account</a>";
 
-        } else {    //else, send username and password to $email and send page success message
+        } else {    //send username and password to $email and send page success message
             
             $email_body = "Your login credentials for Practice Log:\n";
             $email_body .= "username: " . $row['username'] . "\npassword: " . $row['password']; 
@@ -47,5 +47,4 @@
         mysqli_close($con);
     }
 
-    
 ?>

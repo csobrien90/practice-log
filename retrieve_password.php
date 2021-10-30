@@ -46,7 +46,7 @@
         })
             .then( res => res.json())
             .then (data => {
-                document.querySelector('.error-message').innerText = (data.message);
+                document.querySelector('.error-message').innerHTML = (data.message);
             });
     }); 
 </script>

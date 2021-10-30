@@ -1,6 +1,6 @@
 # Practice Log
 
-*This is a simple web application - built with html, css, javascript, and php - that allows users to track time on a given task (such as practicing a musical instrument) and view a log of their past sessions. This project is in partial fulfillment of the Code Louisville JavaScript course (September - November 2021).*
+*This is a simple web application - built with HTML, CSS, JavaScript, and PHP/MySQL - that allows users to track time on a given task (such as practicing a musical instrument) and view a log of their past sessions. This project is in partial fulfillment of the Code Louisville JavaScript course (September - November 2021).*
 
 ## JavaScript Features
 

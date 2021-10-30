@@ -59,30 +59,33 @@ submit.addEventListener("click", (event) => {
             document.querySelector('.error-message').innerText = (data.message);
         } else {
             document.querySelector('.error-message').innerText = null;
-            console.log(data);
-            console.log(data[0]);
-            console.log(data[0]['date']);
-            // let html = `
-            //     <tr>
-            //         <th>Date</th>
-            //         <th>Start Time</th>
-            //         <th>End Time</th>
-            //         <th>Total Time Practiced</th>
-            //         <th>Notes</th>
-            //     </tr>
-            // `;
-            // for(let i = 0; i < data.length; i++) {
-            //     html += `
-            //         <tr>
-            //             <td>${data[i]['date']}</td>
-            //             <td>${data[i]['start_time']}</td>
-            //             <td>${data[i]['stop_time']}</td>
-            //             <td>${data[i]['total_time']}</td>
-            //             <td>${data[i]['notes']}</td>
-            //         </tr>
-            //     `
-            // }
-            // table.innerHTML = html;
+            table.innerHTML = '';
+            delete data.message;
+            let row;
+            let header = document.createElement('TR');
+            header.innerHTML = `
+                <tr>
+                    <th>Date</th>
+                    <th>Start Time</th>
+                    <th>Stop Time</th>
+                    <th>Total Time</th>
+                    <th>Notes</th>
+                </tr>
+            `;
+            table.appendChild(header);
+            for(item in data) {
+                row = document.createElement('TR');
+                row.innerHTML = `
+                    <tr>
+                        <td>${data[item]['date']}</td>
+                        <td>${data[item]['start_time']}</td>
+                        <td>${data[item]['stop_time']}</td>
+                        <td>${data[item]['total_time']}</td>
+                        <td>${data[item]['notes']}</td>
+                    </tr>
+                `;
+                table.appendChild(row);
+            }
         }
     });
 });    

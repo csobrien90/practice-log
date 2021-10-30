@@ -33,11 +33,11 @@
 
             if (mysqli_num_rows($result_email) != 0) {    //if email already exists -> prompt forgot password page
 
-                $response["message"] = "Email is already registered";
+                $response["message"] = "Email is already registered. <a href='retrieve_password.php'>Forgot your password?</a>";
 
             } else if (mysqli_num_rows($result_username) != 0) {  //else, if username exists -> prompt for new username
 
-                $response["message"] = "Username is taken";
+                $response["message"] = "Username is taken.";
 
             } else {    //else, add new user to database -> success message
                 

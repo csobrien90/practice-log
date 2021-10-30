@@ -15,7 +15,7 @@
 
     <main>
         <button>Start Session</button>
-        <p id="stopwatch"></p>
+        <p id="stopwatch">00:00:00</p>
         <form id="session">
             <label for="notes">Notes: </label><textarea id="notes"></textarea>
             <input type="submit" value="Log Session" id="submit-session">
@@ -93,7 +93,7 @@
         })
             .then( res => res.json())
             .then (data => {
-                document.querySelector('.error-message').innerText = (data.message);
+                document.querySelector('.error-message').innerText = data.message;
         });
     });
 </script>
