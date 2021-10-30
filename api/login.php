@@ -25,6 +25,7 @@
 
         $sql_password = "SELECT * FROM `users` WHERE username='$username' AND password='$password'";
         $result_password = mysqli_query($con, $sql_password);
+        $row = my_sqli_fetch_assoc($result_password);
 
         //send back response in $response array:
 
@@ -38,9 +39,12 @@
 
             } else {    //if username exists and password matches
                 
-                $response["message"] = "Login successful";
                 //get full user data and return in $response
-                
+                $response["user_data"] = [
+                    "username" => $row["username"],
+                    "name" => $row["name"],
+                ];
+                $response["message"] = "Login successful";
             }
 
         echo json_encode($response);

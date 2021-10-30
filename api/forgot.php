@@ -27,7 +27,7 @@
 
         if (mysqli_num_rows($result_email) == 0) {  //if email does not exist -> prompt create user page
             
-            $response["message"] = "No users with that email address";
+            $response["message"] = "No users found with that email address";
 
         } else {    //else, send username and password to $email and send page success message
             
