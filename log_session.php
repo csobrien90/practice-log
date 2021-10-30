@@ -14,6 +14,10 @@
     </header>
 
     <main>
+        <h1>Log a New Session</h1>
+        <p class="page-description">Tracking your practice session couldn't be easier! Start the timer, practice 
+            to your hearts content, and submit with the "Log Session" button - use the optional notes input 
+            to keep track of what you practiced, how it went, and whatever else you'll want to remember later.</p>
         <button>Start Session</button>
         <p id="stopwatch">00:00:00</p>
         <form id="session">

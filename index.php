@@ -14,6 +14,8 @@
     </header>
 
     <main>
+        <h1>Login</h1>
+        <p class="page-description">Sign in to view your practice history and track new sessions.</p>
         <form id="login-form">
             <label for="username">Username:</label><input type="text" id="username" name="username" autocomplete="off"></input>
             <label for="password">Password:</label><input type="password" id="password" name="password" autocomplete="off"></input>

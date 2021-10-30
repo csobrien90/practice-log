@@ -14,6 +14,8 @@
     </header>
 
     <main>
+        <h1>Create Account</h1>
+        <p class="page-description">Sign up for a free account to start tracking your practice sessions today!</p>
         <form id="create-account-form">
             <label for="name">Name:</label><input type="text" id="name" name="name" autocomplete="off"></input>
             <label for="email">Email:</label><input type="email" id="email" name="email" autocomplete="off"></input>

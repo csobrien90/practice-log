@@ -14,6 +14,11 @@
     </header>
 
     <main>
+        <h1>Practice Log Home</h1>
+        <p class="page-description">Welcome to the free Practice Log tool, created by 
+            <a href="http://obrientrombone.com" target="_blank">Chad O'Brien</a>. I hope you enjoy and make good use 
+            of this resource. If you have any issues, discover bugs, or wish to offer general feedback, reach out via 
+            <a href="http://obrientrombone.com/connect.html" target="_blank">my personal website's contact form</a>.</p>
         <a href="log_session.php">Log New Session</a>
         <a href="log_history.php">View Practice History</a>
     </main>

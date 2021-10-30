@@ -14,6 +14,9 @@
     </header>
 
     <main>
+        <h1>Forgot Password</h1>
+        <p class="page-description">If there is an account associated with your email, this form will send 
+            your username and password.</p>
         <form id="retrieve-password-form">
             <label for="email">Email:</label><input type="email" id="email" name="email" autocomplete="off"></input>
             <input type="submit" id="forgot-submit">

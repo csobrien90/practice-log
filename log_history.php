@@ -14,7 +14,8 @@
     </header>
 
     <main>
-        
+        <h1>View Practice History</h1>
+        <p class="page-description">Select a time period and "Load History" to view past practice sessions.</p>
         <form>
             <select name="time-range">
                 <option value="last-week">Last 7 Days</option>
