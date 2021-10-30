@@ -25,7 +25,7 @@
 
         $sql_password = "SELECT * FROM `users` WHERE username='$username' AND password='$password'";
         $result_password = mysqli_query($con, $sql_password);
-        $row = my_sqli_fetch_assoc($result_password);
+        $row = mysqli_fetch_assoc($result_password);
 
         //send back response in $response array:
 

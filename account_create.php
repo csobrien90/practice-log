@@ -22,6 +22,7 @@
             <label for="confirm-password">Confirm Password:</label><input type="password" id="confirm-password" name="confirm-password" autocomplete="off"></input>
             <input type="submit" id="create-submit">
         </form>
+        <p class="error-message"></p>
         <a href="index.php">Back to login</a>
     </main>
 
@@ -54,7 +55,9 @@
             })
         })
             .then( res => res.json())
-            .then (data => console.log(data.message));
+            .then (data => {
+                document.querySelector('.error-message').innerText = (data.message);
+            });
     }); 
 </script>
 

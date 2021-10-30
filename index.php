@@ -19,9 +19,9 @@
             <label for="password">Password:</label><input type="password" id="password" name="password" autocomplete="off"></input>
             <input type="submit" id="login-submit">
         </form>
-
-        <p>New user? <a href="account-create.php">Create an account.</a></p>
-        <p>Forgot password? <a href="retrieve-password.php">Retrieve your login info.</a></p>
+        <p class="error-message"></p>
+        <p>New user? <a href="account_create.php">Create an account.</a></p>
+        <p>Forgot password? <a href="retrieve_password.php">Retrieve your login info.</a></p>
         
         <a href="launch.php">TEMPORARILY BYPASS LOGIN</a>
     </main>
@@ -51,7 +51,14 @@
             })
         })
             .then( res => res.json())
-            .then (data => console.log(data.message));
+            .then (data => {
+                if(!data.message.includes("successful")) {
+                    document.querySelector('.error-message').innerText = (data.message);
+                } else {
+                    document.querySelector('.error-message').innerText = null;
+                    console.log(data.message);
+                }
+            });
     }); 
 </script>
 

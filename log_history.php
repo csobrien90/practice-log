@@ -26,6 +26,7 @@
 
         <table id="log-table"></table>
 
+        <p class="error-message"></p>
         <a href="launch.php">Back to Home Page</a>
 
     </main>
@@ -52,36 +53,39 @@ submit.addEventListener("click", (event) => {
             "username": "testuser"
         })
     })
-        .then( res => res.json())
-        .then (data => {
+    .then( res => res.json())
+    .then (data => {
+        if(!data.message.includes("found")) {
+            document.querySelector('.error-message').innerText = (data.message);
+        } else {
+            document.querySelector('.error-message').innerText = null;
             console.log(data);
             console.log(data[0]);
             console.log(data[0]['date']);
-            let html = `
-                <tr>
-                    <th>Date</th>
-                    <th>Start Time</th>
-                    <th>End Time</th>
-                    <th>Total Time Practiced</th>
-                    <th>Notes</th>
-                </tr>
-            `;
-            for(let i = 0; i < data.length; i++) {
-                html += `
-                    <tr>
-                        <td>${data[i]['date']}</td>
-                        <td>${data[i]['start_time']}</td>
-                        <td>${data[i]['stop_time']}</td>
-                        <td>${data[i]['total_time']}</td>
-                        <td>${data[i]['notes']}</td>
-                    </tr>
-                `
-            }
-            table.innerHTML = html;
-        });
-}); 
-
-    
+            // let html = `
+            //     <tr>
+            //         <th>Date</th>
+            //         <th>Start Time</th>
+            //         <th>End Time</th>
+            //         <th>Total Time Practiced</th>
+            //         <th>Notes</th>
+            //     </tr>
+            // `;
+            // for(let i = 0; i < data.length; i++) {
+            //     html += `
+            //         <tr>
+            //             <td>${data[i]['date']}</td>
+            //             <td>${data[i]['start_time']}</td>
+            //             <td>${data[i]['stop_time']}</td>
+            //             <td>${data[i]['total_time']}</td>
+            //             <td>${data[i]['notes']}</td>
+            //         </tr>
+            //     `
+            // }
+            // table.innerHTML = html;
+        }
+    });
+});    
 </script>
 
 </html>

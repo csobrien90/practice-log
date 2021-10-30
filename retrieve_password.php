@@ -18,6 +18,7 @@
             <label for="email">Email:</label><input type="email" id="email" name="email" autocomplete="off"></input>
             <input type="submit" id="forgot-submit">
         </form>
+        <p class="error-message"></p>
         <a href="index.php">Back to login</a>
     </main>
 
@@ -44,7 +45,9 @@
             })
         })
             .then( res => res.json())
-            .then (data => console.log(data.message));
+            .then (data => {
+                document.querySelector('.error-message').innerText = (data.message);
+            });
     }); 
 </script>
 

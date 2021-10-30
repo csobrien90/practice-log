@@ -20,6 +20,7 @@
             <label for="notes">Notes: </label><textarea id="notes"></textarea>
             <input type="submit" value="Log Session" id="submit-session">
         </form>
+        <p class="error-message"></p>
         <a href="launch.php">Back to Home Page</a>
     </main>
 
@@ -81,7 +82,7 @@
 
         fetch("api/log.php", {
             method: "POST",
-            body: JSON.stringify({  //this json is not all properly assigned yet...see db row 1 for specific failings
+            body: JSON.stringify({
                 "username": "testuser",
                 "date": startDate.toDateString(),
                 "start_time": startDate.toTimeString(),
@@ -91,9 +92,10 @@
             })
         })
             .then( res => res.json())
-            .then (data => console.log(data.message));
-    }); 
-
+            .then (data => {
+                document.querySelector('.error-message').innerText = (data.message);
+        });
+    });
 </script>
 
 </html>
