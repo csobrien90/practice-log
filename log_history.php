@@ -24,22 +24,7 @@
             <input type="submit" value="Load History" id="load-history">
         </form>
 
-        <table id="log-table">
-            <tr>
-                <th>Date</th>
-                <th>Start Time</th>
-                <th>End Time</th>
-                <th>Total Time Practiced</th>
-                <th>Notes</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+        <table id="log-table"></table>
 
         <a href="launch.php">Back to Home Page</a>
 
@@ -54,6 +39,7 @@
 <script>
 
 let submit = document.getElementById("load-history");
+let table = document.getElementById("log-table");
 
 submit.addEventListener("click", (event) => {
     event.preventDefault();
@@ -67,7 +53,32 @@ submit.addEventListener("click", (event) => {
         })
     })
         .then( res => res.json())
-        .then (data => console.log(data));
+        .then (data => {
+            console.log(data);
+            console.log(data[0]);
+            console.log(data[0]['date']);
+            let html = `
+                <tr>
+                    <th>Date</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Total Time Practiced</th>
+                    <th>Notes</th>
+                </tr>
+            `;
+            for(let i = 0; i < data.length; i++) {
+                html += `
+                    <tr>
+                        <td>${data[i]['date']}</td>
+                        <td>${data[i]['start_time']}</td>
+                        <td>${data[i]['stop_time']}</td>
+                        <td>${data[i]['total_time']}</td>
+                        <td>${data[i]['notes']}</td>
+                    </tr>
+                `
+            }
+            table.innerHTML = html;
+        });
 }); 
 
     
