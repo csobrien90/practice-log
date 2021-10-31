@@ -41,8 +41,8 @@
     let submit = document.querySelector('#submit-session');
     let notes = document.querySelector('#notes');
     let timer;
-    let now;
-    let startDate;
+    let now = new Date();
+    let startDate = new Date();
     let restartTime = 0;
 
     function formatSeconds(time) {
@@ -82,7 +82,7 @@
     submit.addEventListener("click", (event) => {
         event.preventDefault();
 
-        //validate input formats
+        //validate input formats (timer must have been started)
 
         fetch("api/log.php", {
             method: "POST",
