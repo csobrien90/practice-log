@@ -17,7 +17,9 @@
         
         //security measures on input
 
-
+        $username = mysqli_real_escape_string($con, $username);
+        $password = mysqli_real_escape_string($con, $password);
+        
         //query database
 
         $sql_username = "SELECT * FROM `users` WHERE username='$username'";

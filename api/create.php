@@ -11,7 +11,7 @@
 
         $json = file_get_contents('php://input');
         $data = json_decode($json);
-
+        
         $name = $data->name;
         $email = $data->email;
         $username = $data->username;
@@ -19,6 +19,10 @@
         
         //security measures on input
 
+        $name = mysqli_real_escape_string($con, $name);
+        $email = mysqli_real_escape_string($con, $email);
+        $username = mysqli_real_escape_string($con, $username);
+        $password = mysqli_real_escape_string($con, $password);
 
         //query database
 

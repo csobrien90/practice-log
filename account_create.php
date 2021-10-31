@@ -17,11 +17,11 @@
         <h1>Create Account</h1>
         <p class="page-description">Sign up for a free account to start tracking your practice sessions today!</p>
         <form id="create-account-form">
-            <label for="name">Name:</label><input type="text" id="name" name="name" autocomplete="off"></input>
-            <label for="email">Email:</label><input type="email" id="email" name="email" autocomplete="off"></input>
-            <label for="username">Username:</label><input type="text" id="username" name="username" autocomplete="off"></input>
-            <label for="password">Password:</label><input type="password" id="password" name="password" autocomplete="off"></input>
-            <label for="confirm-password">Confirm Password:</label><input type="password" id="confirm-password" name="confirm-password" autocomplete="off"></input>
+            <label for="name">Name:</label><input type="text" id="name" name="name" autocomplete="off" required></input>
+            <label for="email">Email:</label><input type="email" id="email" name="email" autocomplete="off" required></input>
+            <label for="username">Username:</label><input type="text" id="username" name="username" autocomplete="off" required></input>
+            <label for="password">Password:</label><input type="password" id="password" name="password" autocomplete="off" required></input>
+            <label for="confirm-password">Confirm Password:</label><input type="password" id="confirm-password" name="confirm-password" autocomplete="off" required></input>
             <input type="submit" id="create-submit">
         </form>
         <p class="error-message"></p>
@@ -41,25 +41,35 @@
     let email = document.getElementById("email");
     let username = document.getElementById("username");
     let password = document.getElementById("password");
+    let confirm = document.getElementById("confirm-password");
+    let message = document.querySelector('.error-message');
+
+    let passwordRegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
 
     submit.addEventListener("click", (event) => {
         event.preventDefault();
 
         //validate input formats
-
-        fetch("api/create.php", {
-            method: "POST",
-            body: JSON.stringify({
-                "name": name.value,
-                "email": email.value,
-                "username": username.value,
-                "password": password.value 
+        if (!password.value.match(passwordRegEx)) {
+            message.innerHTML = 'Password must contain at least one lowercase letter, uppercase letter, number, and special character';
+        } else if (password.value !== confirm.value) {
+            message.innerHTML = 'Passwords must match';
+        } else {
+                
+            fetch("api/create.php", {
+                method: "POST",
+                body: JSON.stringify({
+                    "name": name.value,
+                    "email": email.value,
+                    "username": username.value,
+                    "password": password.value 
+                })
             })
-        })
-            .then( res => res.json())
-            .then (data => {
-                document.querySelector('.error-message').innerHTML = (data.message);
-            });
+                .then( res => res.json())
+                .then (data => {
+                    message.innerHTML = (data.message);
+                });
+        }
     }); 
 </script>
 

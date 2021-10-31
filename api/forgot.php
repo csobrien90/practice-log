@@ -15,7 +15,8 @@
         $email = $data->email;
 
         //security measures on input
-
+       
+        $email = mysqli_real_escape_string($con, $email);
 
         //query database
 

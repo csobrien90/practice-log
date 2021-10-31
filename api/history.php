@@ -16,6 +16,7 @@
         
         //security measures on input
 
+        $username = mysqli_real_escape_string($con, $username);
 
         //query database
 

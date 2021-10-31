@@ -21,6 +21,12 @@
         
         //security measures on input
 
+        $username = mysqli_real_escape_string($con, $username);
+        $date = mysqli_real_escape_string($con, $date);
+        $start_time = mysqli_real_escape_string($con, $start_time);
+        $stop_time = mysqli_real_escape_string($con, $stop_time);
+        $total_time = mysqli_real_escape_string($con, $total_time);
+        $notes = mysqli_real_escape_string($con, $notes);
 
         //query database
 
