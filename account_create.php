@@ -10,7 +10,9 @@
 <body>
 
     <header>
-        <?php include 'header.php' ?>
+        <h1>Create Account | Practice Log</h1>
+        <p class="current-user"></p>
+        <a class="logout" href="index.php" onclick="logout()">Logout</a>
     </header>
 
     <main>
@@ -35,6 +37,16 @@
 </body>
 
 <script>
+
+    const currentUser = document.querySelector('.current-user');
+    let name = localStorage.getItem('name');
+    currentUser.innerText = `Hello, ${name}!`;
+
+    function logout() {
+        localStorage.clear();
+        return true;
+    }
+
     let submit = document.getElementById("create-submit");
 
     let name = document.getElementById("name");

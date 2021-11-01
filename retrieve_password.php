@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Forgot Password | Practice Log</title>
+    <title>Retrieve Login Credentials | Practice Log</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -10,7 +10,9 @@
 <body>
 
     <header>
-        <?php include 'header.php' ?>
+        <h1>Retrieve Login Credentials | Practice Log</h1>
+        <p class="current-user"></p>
+        <a class="logout" href="index.php" onclick="logout()">Logout</a>
     </header>
 
     <main>
@@ -32,6 +34,16 @@
 </body>
 
 <script>
+    
+    const currentUser = document.querySelector('.current-user');
+    let name = localStorage.getItem('name');
+    currentUser.innerText = `Hello, ${name}!`;
+
+    function logout() {
+        localStorage.clear();
+        return true;
+    }
+    
     let submit = document.getElementById("forgot-submit");
 
     let email = document.getElementById("email");

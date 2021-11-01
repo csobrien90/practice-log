@@ -10,11 +10,10 @@
 <body>
 
     <header>
-        <?php include 'header.php' ?>
+        <h1>Login | Practice Log</h1>
     </header>
 
     <main>
-        <h1>Login</h1>
         <p class="page-description">Sign in to view your practice history and track new sessions.</p>
         <form id="login-form">
             <label for="username">Username:</label><input type="text" id="username" name="username" autocomplete="off" required></input>
@@ -40,6 +39,8 @@
     let username = document.getElementById("username");
     let password = document.getElementById("password");
 
+    let storage = localStorage;
+
     submit.addEventListener("click", (event) => {
         event.preventDefault();
 
@@ -58,6 +59,9 @@
                     document.querySelector('.error-message').innerText = (data.message);
                 } else {
                     document.querySelector('.error-message').innerText = null;
+                    storage.setItem('username', data.user_data.username);
+                    let firstName = data.user_data.name.split(' ')[0];
+                    storage.setItem('name', firstName);
                     console.log(data.message);
                 }
             });

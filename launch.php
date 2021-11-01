@@ -10,11 +10,12 @@
 <body>
 
     <header>
-        <?php include 'header.php' ?>
+        <h1>Welcome | Practice Log</h1>
+        <p class="current-user"></p>
+        <a class="logout" href="index.php" onclick="logout()">Logout</a>
     </header>
 
     <main>
-        <h1>Practice Log Home</h1>
         <p class="page-description">Welcome to the free Practice Log tool, created by 
             <a href="http://obrientrombone.com" target="_blank">Chad O'Brien</a>. I hope you enjoy and make good use 
             of this resource. If you have any issues, discover bugs, or wish to offer general feedback, reach out via 
@@ -30,7 +31,14 @@
 </body>
 
 <script>
-    
+    const currentUser = document.querySelector('.current-user');
+    let name = localStorage.getItem('name');
+    currentUser.innerText = `Hello, ${name}!`;
+
+    function logout() {
+        localStorage.clear();
+        return true;
+    }
 </script>
 
 </html>

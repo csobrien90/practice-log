@@ -41,7 +41,7 @@
 
             } else {    //if username exists and password matches
                 
-                //get full user data and return in $response
+                //get basic user data and return in $response
                 $response["user_data"] = [
                     "username" => $row["username"],
                     "name" => $row["name"],

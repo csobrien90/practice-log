@@ -10,7 +10,9 @@
 <body>
 
     <header>
-        <?php include 'header.php' ?>
+        <h1>New Session | Practice Log</h1>
+        <p class="current-user"></p>
+        <a class="logout" href="index.php" onclick="logout()">Logout</a>
     </header>
 
     <main>
@@ -36,10 +38,22 @@
 
 <script>
 
+    const currentUser = document.querySelector('.current-user');
+    let name = localStorage.getItem('name');
+    currentUser.innerText = `Hello, ${name}!`;
+
+    function logout() {
+        localStorage.clear();
+        return true;
+    }
+
+    let username = localStorage.getItem('username');
+    
     let button = document.querySelector('button');
     let stopwatch = document.querySelector('#stopwatch');
     let submit = document.querySelector('#submit-session');
     let notes = document.querySelector('#notes');
+    
     let timer;
     let now = new Date();
     let startDate = new Date();
@@ -87,7 +101,7 @@
         fetch("api/log.php", {
             method: "POST",
             body: JSON.stringify({
-                "username": "testuser",
+                "username": username,
                 "date": startDate.toDateString(),
                 "start_time": startDate.toTimeString(),
                 "stop_time": now.toTimeString(),
