@@ -1,0 +1,35 @@
+/*
+
+Color Scheme:
+    dark: #121212
+    elevated: #2e2e2e
+    light: #ffffff
+    primary: #BB86FC
+    accent: #ffff99
+
+Dark-theme color reference: https://www.material.io/design/color/dark-theme.html
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+main {
+    background-color: #2e2e2e;
+}
+
+a {
+    color: #ffff99;
+}
+
+.input-line {
+    display: block;
+}

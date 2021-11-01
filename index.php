@@ -17,9 +17,9 @@
     <main>
         <p class="page-description">Sign in to view your practice history and track new sessions.</p>
         <form id="login-form">
-            <label for="username">Username:</label><input type="text" id="username" name="username" autocomplete="off" required></input>
-            <label for="password">Password:</label><input type="password" id="password" name="password" autocomplete="off" required></input>
-            <input type="submit" id="login-submit">
+            <span class="input-line"><label for="username">Username:</label><input type="text" id="username" name="username" autocomplete="off" required></input></span>
+            <span class="input-line"><label for="password">Password:</label><input type="password" id="password" name="password" autocomplete="off" required></input></span>
+            <span class="input-line"><input type="submit" id="login-submit"></span>
         </form>
         <p class="error-message"></p>
         <p>New user? <a href="account_create.php">Create an account.</a></p>

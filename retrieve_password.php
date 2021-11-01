@@ -18,8 +18,8 @@
         <p class="page-description">If there is an account associated with your email, this form will send 
             your username and password.</p>
         <form id="retrieve-password-form">
-            <label for="email">Email:</label><input type="email" id="email" name="email" autocomplete="off" required></input>
-            <input type="submit" id="forgot-submit">
+            <span class="input-line"><label for="email">Email:</label><input type="email" id="email" name="email" autocomplete="off" required></input></span>
+            <span class="input-line"><input type="submit" id="forgot-submit"></span>
         </form>
         <p class="error-message"></p>
         <a href="index.php">Back to login</a>
