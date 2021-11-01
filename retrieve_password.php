@@ -16,7 +16,6 @@
     </header>
 
     <main>
-        <h1>Forgot Password</h1>
         <p class="page-description">If there is an account associated with your email, this form will send 
             your username and password.</p>
         <form id="retrieve-password-form">
@@ -33,37 +32,6 @@
 
 </body>
 
-<script>
-    
-    const currentUser = document.querySelector('.current-user');
-    let name = localStorage.getItem('name');
-    currentUser.innerText = `Hello, ${name}!`;
-
-    function logout() {
-        localStorage.clear();
-        return true;
-    }
-    
-    let submit = document.getElementById("forgot-submit");
-
-    let email = document.getElementById("email");
-
-    submit.addEventListener("click", (event) => {
-        event.preventDefault();
-
-        //validate input format
-
-        fetch("api/forgot.php", {
-            method: "POST",
-            body: JSON.stringify({
-                "email": email.value
-            })
-        })
-            .then( res => res.json())
-            .then (data => {
-                document.querySelector('.error-message').innerHTML = (data.message);
-            });
-    }); 
-</script>
+<script src='js/retrieve_password.js'></script>
 
 </html>

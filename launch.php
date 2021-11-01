@@ -30,15 +30,6 @@
 
 </body>
 
-<script>
-    const currentUser = document.querySelector('.current-user');
-    let name = localStorage.getItem('name');
-    currentUser.innerText = `Hello, ${name}!`;
-
-    function logout() {
-        localStorage.clear();
-        return true;
-    }
-</script>
+<script src='js/launch.js'></script>
 
 </html>
