@@ -23,8 +23,6 @@
         <p class="error-message"></p>
         <p>New user? <a href="account_create.php">Create an account.</a></p>
         <p>Forgot password? <a href="retrieve_password.php">Retrieve your login info.</a></p>
-        
-        <a href="launch.php">TEMPORARILY BYPASS LOGIN</a>
     </main>
 
     <footer>
@@ -62,7 +60,7 @@
                     storage.setItem('username', data.user_data.username);
                     let firstName = data.user_data.name.split(' ')[0];
                     storage.setItem('name', firstName);
-                    console.log(data.message);
+                    window.location.href = 'launch.php';
                 }
             });
     }); 
