@@ -8,12 +8,15 @@ function logout() {
     return true;
 }
 
+let timeRange = document.getElementById("time-range");
 let submit = document.getElementById("load-history");
 let table = document.getElementById("log-table");
-let username = localStorage.getItem('username');
+let username = localStorage.getItem("username");
 
 submit.addEventListener("click", (event) => {
     event.preventDefault();
+    let today = new Date();
+    let tempDate;
 
     //validate input formats
 
@@ -44,17 +47,50 @@ submit.addEventListener("click", (event) => {
             `;
             table.appendChild(header);
             for(item in data) {
-                row = document.createElement('TR');
-                row.innerHTML = `
-                    <tr>
-                        <td>${data[item]['date']}</td>
-                        <td>${data[item]['start_time']}</td>
-                        <td>${data[item]['stop_time']}</td>
-                        <td>${data[item]['total_time']}</td>
-                        <td>${data[item]['notes']}</td>
-                    </tr>
-                `;
+                
+                tempDate = new Date(data[item]['date']).valueOf();
+                console.log(tempDate);
+                if(timeRange.value === "last-week") {
+                    if(tempDate >= (today.valueOf() - 604800000)) {
+                        row = document.createElement('TR');
+                        row.innerHTML = `
+                            <tr>
+                                <td>${data[item]['date']}</td>
+                                <td>${data[item]['start_time']}</td>
+                                <td>${data[item]['stop_time']}</td>
+                                <td>${data[item]['total_time']}</td>
+                                <td>${data[item]['notes']}</td>
+                            </tr>
+                        `;
+                    }
+                } else if(timeRange.value === "last-month") {
+                    if(tempDate >= (today.valueOf() - 2592000000)) {
+                        row = document.createElement('TR');
+                        row.innerHTML = `
+                            <tr>
+                                <td>${data[item]['date']}</td>
+                                <td>${data[item]['start_time']}</td>
+                                <td>${data[item]['stop_time']}</td>
+                                <td>${data[item]['total_time']}</td>
+                                <td>${data[item]['notes']}</td>
+                            </tr>
+                        `;
+                    }                
+                } else {
+                    row = document.createElement('TR');
+                    row.innerHTML = `
+                        <tr>
+                            <td>${data[item]['date']}</td>
+                            <td>${data[item]['start_time']}</td>
+                            <td>${data[item]['stop_time']}</td>
+                            <td>${data[item]['total_time']}</td>
+                            <td>${data[item]['notes']}</td>
+                        </tr>
+                    `;
+                }
+
                 table.appendChild(row);
+
             }
         }
     });

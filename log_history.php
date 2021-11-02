@@ -19,7 +19,7 @@
     <main>
         <p class="page-description">Select a time period and "Load History" to view past practice sessions.</p>
         <form>
-            <select name="time-range">
+            <select name="time-range" id="time-range">
                 <option value="last-week">Last 7 Days</option>
                 <option value="last-month">Last 30 Days</option>
                 <option value="all">Full History</option>
