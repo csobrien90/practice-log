@@ -1,20 +1,23 @@
 /*
-
 Color Scheme:
     dark: #121212
     elevated: #2e2e2e
     light: #ffffff
     primary: #BB86FC
     accent: #ffff99
-
-Dark-theme color reference: https://www.material.io/design/color/dark-theme.html
-
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Zen Kurenaido', sans-serif;
+}
+
+header {
+    padding: 1em;
 }
 
 body {
@@ -23,13 +26,46 @@ body {
 }
 
 main {
-    background-color: #2e2e2e;
+    width: 90%;
+    margin: 3em auto;
+    font-size: 1.5em;
+}
+
+footer {
+    margin: 1.5em 0;
+    text-align: center;
 }
 
 a {
     color: #ffff99;
 }
 
+form {
+    margin: 1.5em 0;
+}
+
+label {
+    display: inline-block;
+    width: 32%;
+}
+
+input[type='text'], input[type='password'] {
+    width: 60%;
+}
+
+input[type='submit'] {
+    background-color: #2e2e2e;
+    color: #BB86FC;
+    display: block;
+    width: 4em;
+    height: 2em;
+    font-size: 1.5em;
+    margin: .7em auto;
+    border-radius: .3em;
+}
+
 .input-line {
     display: block;
+    width: 100%;
+    margin-bottom: .5em;
 }
