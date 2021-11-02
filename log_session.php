@@ -26,7 +26,6 @@
             <input type="submit" value="Log Session" id="submit-session">
         </form>
         <p class="error-message"></p>
-        <a href="launch.php">Back to Home Page</a>
     </main>
 
     <footer>

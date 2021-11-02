@@ -29,8 +29,7 @@
         <table id="log-table"></table>
 
         <p class="error-message"></p>
-        <a href="launch.php">Back to Home Page</a>
-
+        
     </main>
 
     <footer>
