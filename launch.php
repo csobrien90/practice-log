@@ -12,8 +12,7 @@
 
     <header>
         <h1>Welcome | Practice Log</h1>
-        <p class="current-user"></p>
-        <a class="logout" href="index.php" onclick="logout()">Logout</a>
+        <?php include 'header.php' ?>
     </header>
 
     <main>
