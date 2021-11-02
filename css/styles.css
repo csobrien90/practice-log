@@ -4,53 +4,66 @@ Color Scheme:
     elevated: #2e2e2e
     light: #ffffff
     primary: #BB86FC
-    accent: #ffff99
+    accent: #03dac6
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Zen Kurenaido', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 header {
     padding: 1em;
+    font-size: 1.2em;
 }
 
 body {
     background-color: #121212;
     color: #ffffff;
+    min-height: calc(100vh - 4em);
+    position: relative;
 }
+
+body::after {
+    content: '';
+    display: block;
+    height: 4em;
+  }  
 
 main {
     width: 90%;
-    margin: 3em auto;
+    margin: 2.2em auto;
     font-size: 1.5em;
 }
 
 footer {
     margin: 1.5em 0;
     text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 a {
-    color: #ffff99;
+    color: #03dac6;
 }
 
 form {
-    margin: 1.5em 0;
+    margin: 2em 0;
 }
 
 label {
-    display: inline-block;
-    width: 32%;
+    display: block;
+    margin-bottom: .2em;
 }
 
-input[type='text'], input[type='password'] {
-    width: 60%;
+input[type='text'], input[type='password'], input[type='email'] {
+    width: 90%;
+    font-size: 1.2em;
 }
 
 input[type='submit'] {

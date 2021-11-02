@@ -19,7 +19,7 @@
         <form id="login-form">
             <span class="input-line"><label for="username">Username:</label><input type="text" id="username" name="username" autocomplete="off" required></input></span>
             <span class="input-line"><label for="password">Password:</label><input type="password" id="password" name="password" autocomplete="off" required></input></span>
-            <span class="input-line"><input type="submit" id="login-submit"></span>
+            <span class="input-line"><input type="submit" id="login-submit" value="Login"></span>
         </form>
         <p class="error-message"></p>
         <p>New user? <a href="account_create.php">Create an account.</a></p>
