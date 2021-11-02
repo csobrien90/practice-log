@@ -17,9 +17,9 @@
 
     <main>
         <img class="big-profile" src="img/default-profile.png"></img>
-        <p id="profile-name">Name: </p>
-        <p id="profile-email">Email: </p>
-        <p id="profile-username">Username: </p>
+        <p id="profile-name"></p>
+        <p id="profile-email"></p>
+        <p id="profile-username"></p>
         <button id="profile-change-password">Change Password</button>
         <button id="profile-delete">Delete User</button>
     </main>
@@ -31,5 +31,10 @@
 </body>
 
 <script src='js/profile.js'></script>
+<script>
+    document.getElementById('profile-name').innerText = `Name: ${localStorage.getItem('full_name')}`;
+    document.getElementById('profile-email').innerText = `Email: ${localStorage.getItem('email')}`;
+    document.getElementById('profile-username').innerText = `Username: ${localStorage.getItem('username')}`;
+</script>
 
 </html>

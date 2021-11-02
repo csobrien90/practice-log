@@ -24,8 +24,10 @@ submit.addEventListener("click", (event) => {
             } else {
                 document.querySelector('.error-message').innerText = null;
                 storage.setItem('username', data.user_data.username);
+                storage.setItem('email', data.user_data.email);
+                storage.setItem('full_name', data.user_data.name);
                 let firstName = data.user_data.name.split(' ')[0];
-                storage.setItem('name', firstName);
+                storage.setItem('first_name', firstName);
                 window.location.href = 'launch.php';
             }
         });

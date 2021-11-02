@@ -45,6 +45,7 @@
                 $response["user_data"] = [
                     "username" => $row["username"],
                     "name" => $row["name"],
+                    "email" => $row["email"],
                 ];
                 $response["message"] = "Login successful";
             }
