@@ -16,7 +16,10 @@
     </header>
 
     <main>
-        <img class="big-profile" src="img/default-profile.png"></img>
+        <div id="profile-image-wrapper">
+            <input type="file" id="profile-image-upload" title="Upload profile picture">
+            <img class="big-profile" src="img/default-profile.png"></img>
+        </div>
         <p id="profile-name"></p>
         <p id="profile-email"></p>
         <p id="profile-username"></p>
