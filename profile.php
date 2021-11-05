@@ -20,13 +20,16 @@
             <input type="file" id="profile-image-upload" title="Upload profile picture">
             <img class="big-profile" src="img/default-profile.png"></img>
         </div>
-        <p id="profile-name"></p>
-        <p id="profile-email"></p>
-        <p id="profile-username"></p>    
-        <button id="profile-delete">Delete User</button>
-        <p id="confirm-delete-message">Enter your password to confirm you wish to permanently delete this account.</p>
-        <input type="password" id="confirm-delete-password">
-        <input type="submit" id="confirm-delete" value="Confirm Delete User">
+        <section id="user-info">
+            <p id="profile-name"></p>
+            <p id="profile-email"></p>
+            <p id="profile-username"></p>
+        </section>
+            <button id="profile-delete">Delete User</button>
+            <p id="confirm-delete-message" style="display: none;">Enter your password to confirm you wish to permanently delete this account.</p>
+            <input type="password" id="confirm-delete-password">
+            <input type="submit" id="confirm-delete" value="Confirm Delete User">
+        </section>
     </main>
 
     <footer>

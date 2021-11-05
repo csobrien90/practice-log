@@ -37,7 +37,7 @@ body::after {
 main {
     width: 90%;
     margin: 2.2em auto;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 footer {
@@ -63,7 +63,7 @@ label {
 }
 
 input[type='text'], input[type='password'], input[type='email'] {
-    width: 90%;
+    width: 100%;
     font-size: 1.2em;
 }
 
@@ -71,10 +71,14 @@ input[type='submit'], button, .launch-link {
     background-color: #2e2e2e;
     color: #BB86FC;
     display: block;
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin: .7em auto;
     padding: .5em;
     border-radius: .3em;
+}
+
+.page-description {
+    text-align: center;
 }
 
 .input-line {
@@ -87,6 +91,7 @@ input[type='submit'], button, .launch-link {
     width: 200px;
     height: 200px;
     position: relative;
+    margin: 0 auto 1.2em;
 }
 
 #profile-image-upload, .big-profile {
@@ -120,4 +125,48 @@ input[type='submit'], button, .launch-link {
 
 #confirm-delete-message, #confirm-delete-password, #confirm-delete {
     display: none;
+    margin: .3em
+}
+
+#user-info {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#profile-delete {
+    margin: .5em auto 1.5em;
+}
+
+#log-section {
+    margin-top: 2em;
+}
+
+#delete-user {
+    text-align: center;
+}
+
+#stopwatch {
+    text-align: center;
+    font-size: 2em;
+}
+
+#notes, #session label {
+    width: 90%;
+    margin: .2em auto;
+}
+
+#notes {
+    height: 200px;
+    display: block;
+}
+
+#time-range {
+    font-size: 1em;
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+#launch-buttons {
+    margin-top: 1.5em;
 }

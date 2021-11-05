@@ -19,8 +19,13 @@ const password = document.getElementById('confirm-delete-password');
 let username = localStorage.getItem('username');
 
 deleteButton.addEventListener("click", () => {
-    deleteConfirm.innerHTML = 'Enter your password to confirm you wish to permanently delete this account.';
-    deleteConfirm.style.display = confirmButton.style.display = password.style.display = "unset";
+    if (deleteConfirm.style.display == "none") {     
+        deleteConfirm.innerHTML = 'Enter your password to confirm you wish to permanently delete this account.';
+        deleteConfirm.style.display = confirmButton.style.display = password.style.display = "unset";
+    } else {
+        deleteConfirm.innerHTML = '';
+        deleteConfirm.style.display = confirmButton.style.display = password.style.display = "none";
+    }
 });
 
 confirmButton.addEventListener("click", (event) => {

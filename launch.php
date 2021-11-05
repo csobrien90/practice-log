@@ -20,8 +20,10 @@
             <a href="http://obrientrombone.com" target="_blank">Chad O'Brien</a>. I hope you enjoy and make good use 
             of this resource. If you have any issues, discover bugs, or wish to offer general feedback, reach out via 
             <a href="http://obrientrombone.com/connect.html" target="_blank">my personal website's contact form</a>.</p>
-        <a href="log_session.php" class="launch-link">Log New Session</a>
-        <a href="log_history.php" class="launch-link">View Practice History</a>
+        <section id="launch-buttons">
+            <a href="log_session.php" class="launch-link">Log New Session</a>
+            <a href="log_history.php" class="launch-link">View Practice History</a>
+        </section>
     </main>
 
     <footer>
