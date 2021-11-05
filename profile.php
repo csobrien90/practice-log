@@ -22,9 +22,11 @@
         </div>
         <p id="profile-name"></p>
         <p id="profile-email"></p>
-        <p id="profile-username"></p>
-        <button id="profile-change-password">Change Password</button>
+        <p id="profile-username"></p>    
         <button id="profile-delete">Delete User</button>
+        <p id="confirm-delete-message">Enter your password to confirm you wish to permanently delete this account.</p>
+        <input type="password" id="confirm-delete-password">
+        <input type="submit" id="confirm-delete" value="Confirm Delete User">
     </main>
 
     <footer>
@@ -34,10 +36,5 @@
 </body>
 
 <script src='js/profile.js'></script>
-<script>
-    document.getElementById('profile-name').innerText = `Name: ${localStorage.getItem('full_name')}`;
-    document.getElementById('profile-email').innerText = `Email: ${localStorage.getItem('email')}`;
-    document.getElementById('profile-username').innerText = `Username: ${localStorage.getItem('username')}`;
-</script>
 
 </html>
