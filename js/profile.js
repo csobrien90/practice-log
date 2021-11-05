@@ -8,6 +8,17 @@ function logout() {
     return true;
 }
 
+const arrow = document.getElementById('arrow');
+const navMenu = document.getElementById('nav-menu');
+
+navMenu.addEventListener("click", () => {
+    if(arrow.style.transform === 'rotate(90deg)') {
+        arrow.style.transform = 'rotate(0)';
+    } else {
+        arrow.style.transform = 'rotate(90deg)';
+    }
+})
+
 document.getElementById('profile-name').innerText = `Name: ${localStorage.getItem('full_name')}`;
 document.getElementById('profile-email').innerText = `Email: ${localStorage.getItem('email')}`;
 document.getElementById('profile-username').innerText = `Username: ${localStorage.getItem('username')}`;
