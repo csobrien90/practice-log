@@ -1,5 +1,5 @@
 <?php
-    echo '<div id="nav-menu"><img class="small-profile" src="img/default-profile.png">',
+    echo '<div id="nav-menu" tabIndex="0"><img class="small-profile" src="img/default-profile.png">',
     '<p class="current-user"></p><span id="arrow">&#9654;</span></div>',
     '<nav><ul>',
     '<li><a href="launch.php">Home</a></li>',

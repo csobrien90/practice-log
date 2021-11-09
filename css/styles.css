@@ -55,8 +55,22 @@ header h1 {
     transition: transform .3s;
 }
 
-#nav-menu, nav {
+#nav-menu {
+    cursor: pointer;
+    margin: 10px;
+    padding-top: 10px;
     max-width: 100%;
+}
+
+#nav-menu:hover {
+    box-shadow: 0 0 2px 2px white;
+}
+
+nav {
+    max-width: 100%;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all .5s;
 }
 
 nav ul {
