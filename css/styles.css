@@ -236,3 +236,22 @@ input[type='submit'], button, .launch-link {
 #launch-buttons {
     margin-top: 1.5em;
 }
+
+#log-table {
+    border: 2px solid white
+}
+
+#log-table tr:nth-of-type(2n) {
+    background-color: grey;
+}
+
+#log-table th:nth-of-type(5n),
+#log-table td:nth-of-type(5n),
+#log-table th:nth-of-type(4n),
+#log-table td:nth-of-type(4n),
+#log-table th:nth-of-type(3n),
+#log-table td:nth-of-type(3n),
+#log-table th:nth-of-type(2n),
+#log-table td:nth-of-type(2n) {
+    display:none;
+}
