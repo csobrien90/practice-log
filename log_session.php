@@ -37,5 +37,7 @@
 </body>
 
 <script src='js/log_session.js'></script>
+<script src='js/header.js'></script>
+<script src='js/nav.js'></script>
 
 </html>

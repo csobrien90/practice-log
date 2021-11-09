@@ -39,5 +39,7 @@
 </body>
 
 <script src='js/profile.js'></script>
+<script src='js/header.js'></script>
+<script src='js/nav.js'></script>
 
 </html>
