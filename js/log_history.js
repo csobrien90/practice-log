@@ -45,11 +45,11 @@ submit.addEventListener("click", (event) => {
                         row = document.createElement('TR');
                         row.innerHTML = `
                             <tr>
-                                <td>${data[item]['date']}</td>
-                                <td>${data[item]['start_time']}</td>
-                                <td>${data[item]['stop_time']}</td>
-                                <td>${data[item]['total_time']}</td>
-                                <td>${data[item]['notes']}</td>
+                                <td data-th="Date">${data[item]['date']}</td>
+                                <td data-th="Start Time">${data[item]['start_time']}</td>
+                                <td data-th="Stop Time">${data[item]['stop_time']}</td>
+                                <td data-th="Total Time">${data[item]['total_time']}</td>
+                                <td data-th="Notes">${data[item]['notes']}</td>
                             </tr>
                         `;
                     }
@@ -58,11 +58,11 @@ submit.addEventListener("click", (event) => {
                         row = document.createElement('TR');
                         row.innerHTML = `
                             <tr>
-                                <td>${data[item]['date']}</td>
-                                <td>${data[item]['start_time']}</td>
-                                <td>${data[item]['stop_time']}</td>
-                                <td>${data[item]['total_time']}</td>
-                                <td>${data[item]['notes']}</td>
+                                <td data-th="Date">${data[item]['date']}</td>
+                                <td data-th="Start Time">${data[item]['start_time']}</td>
+                                <td data-th="Stop Time">${data[item]['stop_time']}</td>
+                                <td data-th="Total Time">${data[item]['total_time']}</td>
+                                <td data-th="Notes">${data[item]['notes']}</td>
                             </tr>
                         `;
                     }                
@@ -70,18 +70,22 @@ submit.addEventListener("click", (event) => {
                     row = document.createElement('TR');
                     row.innerHTML = `
                         <tr>
-                            <td>${data[item]['date']}</td>
-                            <td>${data[item]['start_time']}</td>
-                            <td>${data[item]['stop_time']}</td>
-                            <td>${data[item]['total_time']}</td>
-                            <td>${data[item]['notes']}</td>
+                            <td data-th="Date">${data[item]['date']}</td>
+                            <td data-th="Start Time">${data[item]['start_time']}</td>
+                            <td data-th="Stop Time">${data[item]['stop_time']}</td>
+                            <td data-th="Total Time">${data[item]['total_time']}</td>
+                            <td data-th="Notes">${data[item]['notes']}</td>
                         </tr>
                     `;
                 }
 
-                table.appendChild(row);
+                if(row) {
+                    table.appendChild(row);
+                } else {
+                    table.innerHTML = 'No data found - get to practicing!';
+                }
 
             }
         }
     });
-});    
+});

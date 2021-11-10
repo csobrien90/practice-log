@@ -245,13 +245,22 @@ input[type='submit'], button, .launch-link {
     background-color: grey;
 }
 
-#log-table th:nth-of-type(5n),
-#log-table td:nth-of-type(5n),
-#log-table th:nth-of-type(4n),
-#log-table td:nth-of-type(4n),
-#log-table th:nth-of-type(3n),
-#log-table td:nth-of-type(3n),
-#log-table th:nth-of-type(2n),
-#log-table td:nth-of-type(2n) {
-    display:none;
+
+/* table responsiveness */
+
+#log-table th {
+    display: none;
+}
+
+#log-table td {
+    display: block; 
+}
+
+#log-table td:before {
+    content: attr(data-th)": ";
+    font-weight: bold;
+}
+
+#log-table th, #log-table td {
+    text-align: left;
 }
