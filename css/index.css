@@ -1,0 +1,9 @@
+.index-links {
+    margin-bottom: 12px;
+}
+
+@media screen and (min-width: 800px) {
+    main {
+        max-width: 40%;
+    }
+}

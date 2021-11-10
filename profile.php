@@ -12,6 +12,7 @@
 <body>
 
     <header>
+        <div class="header-wrapper">
         <h1>My Profile | Practice Log</h1>
         <?php include 'header.php' ?>
     </header>
