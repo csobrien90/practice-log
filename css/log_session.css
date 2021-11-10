@@ -1,0 +1,19 @@
+#log-section {
+    margin-top: 2em;
+}
+
+#stopwatch {
+    text-align: center;
+    font-size: 2em;
+}
+
+#notes, #session label {
+    width: 90%;
+    margin: .2em auto;
+}
+
+#notes {
+    height: 200px;
+    display: block;
+    resize: none;
+}

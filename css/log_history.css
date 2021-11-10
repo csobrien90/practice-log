@@ -1,0 +1,34 @@
+#time-range {
+    font-size: 1em;
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+#log-table {
+    border: 2px solid white
+}
+
+#log-table tr:nth-of-type(2n) {
+    background-color: grey;
+}
+
+
+/* table responsiveness */
+
+#log-table th {
+    display: none;
+}
+
+#log-table td {
+    display: block; 
+}
+
+#log-table td:before {
+    content: attr(data-th)": ";
+    font-weight: bold;
+}
+
+#log-table th, #log-table td {
+    text-align: left;
+}
