@@ -11,7 +11,7 @@ let username = localStorage.getItem('username');
 deleteButton.addEventListener("click", () => {
     if (deleteConfirm.style.display == "none") {     
         deleteConfirm.innerHTML = 'Enter your password to confirm you wish to permanently delete this account.';
-        deleteConfirm.style.display = confirmButton.style.display = password.style.display = "unset";
+        deleteConfirm.style.display = confirmButton.style.display = password.style.display = "block";
     } else {
         deleteConfirm.innerHTML = '';
         deleteConfirm.style.display = confirmButton.style.display = password.style.display = "none";

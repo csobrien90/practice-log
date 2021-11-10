@@ -37,7 +37,8 @@
 
 #confirm-delete-message, #confirm-delete-password, #confirm-delete {
     display: none;
-    margin: .3em
+    text-align: center;
+    margin: 12px auto;
 }
 
 #user-info {

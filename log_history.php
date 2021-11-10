@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>View History | Practice Log</title>
+    <title>History | Practice Log</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
@@ -12,7 +12,7 @@
 <body>
 
     <header>
-        <h1>View History | Practice Log</h1>
+        <h1>History | Practice Log</h1>
         <?php include 'header.php' ?>
     </header>
 

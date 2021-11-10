@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Retrieve Login Credentials | Practice Log</title>
+    <title>Recover Credentials | Practice Log</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
@@ -12,7 +12,7 @@
 <body>
 
     <header>
-        <h1>Retrieve Login Credentials | Practice Log</h1>
+        <h1>Recover Credentials | Practice Log</h1>
     </header>
 
     <main>

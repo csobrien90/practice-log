@@ -24,9 +24,7 @@ submit.addEventListener("click", (event) => {
             document.querySelector('.error-message').innerText = null;
             table.innerHTML = '';
             delete data.message;
-            let row;
-            let header = document.createElement('TR');
-            header.innerHTML = `
+            let html = `
                 <tr>
                     <th>Date</th>
                     <th>Start Time</th>
@@ -35,15 +33,12 @@ submit.addEventListener("click", (event) => {
                     <th>Notes</th>
                 </tr>
             `;
-            table.appendChild(header);
             for(item in data) {
                 
                 tempDate = new Date(data[item]['date']).valueOf();
-                console.log(tempDate);
                 if(timeRange.value === "last-week") {
                     if(tempDate >= (today.valueOf() - 604800000)) {
-                        row = document.createElement('TR');
-                        row.innerHTML = `
+                        html += `
                             <tr>
                                 <td data-th="Date">${data[item]['date']}</td>
                                 <td data-th="Start Time">${data[item]['start_time']}</td>
@@ -55,8 +50,7 @@ submit.addEventListener("click", (event) => {
                     }
                 } else if(timeRange.value === "last-month") {
                     if(tempDate >= (today.valueOf() - 2592000000)) {
-                        row = document.createElement('TR');
-                        row.innerHTML = `
+                        html += `
                             <tr>
                                 <td data-th="Date">${data[item]['date']}</td>
                                 <td data-th="Start Time">${data[item]['start_time']}</td>
@@ -67,8 +61,7 @@ submit.addEventListener("click", (event) => {
                         `;
                     }                
                 } else {
-                    row = document.createElement('TR');
-                    row.innerHTML = `
+                    html += `
                         <tr>
                             <td data-th="Date">${data[item]['date']}</td>
                             <td data-th="Start Time">${data[item]['start_time']}</td>
@@ -79,13 +72,15 @@ submit.addEventListener("click", (event) => {
                     `;
                 }
 
-                if(row) {
-                    table.appendChild(row);
-                } else {
-                    table.innerHTML = 'No data found - get to practicing!';
-                }
-
             }
+            
+            if (!html.includes('td')) {
+                document.querySelector('.error-message').innerText = 'No records found - time to hit the shed!';
+            } else {
+                table.innerHTML = html;
+                table.style.border = '2px solid white';    
+            }
+            
         }
     });
 });
