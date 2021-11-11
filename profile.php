@@ -18,16 +18,19 @@
     </header>
 
     <main>
-        <div id="profile-image-wrapper">
-            <input type="file" id="profile-image-upload" title="Upload profile picture">
-            <img class="big-profile" src="img/default-profile.png"></img>
+        <div id="user-info-wrapper">
+            <div id="profile-image-wrapper">
+                <input type="file" id="profile-image-upload" title="Upload profile picture">
+                <img class="big-profile" src="img/default-profile.png"></img>
+            </div>
+            <section id="user-info">
+                <p id="profile-name"></p>
+                <p id="profile-email"></p>
+                <p id="profile-username"></p>
+                <button id="profile-delete">Delete User</button>
+            </section>
         </div>
-        <section id="user-info">
-            <p id="profile-name"></p>
-            <p id="profile-email"></p>
-            <p id="profile-username"></p>
-        </section>
-            <button id="profile-delete">Delete User</button>
+        <section id="delete-confirmation">
             <p id="confirm-delete-message" style="display: none;">Enter your password to confirm you wish to permanently delete this account.</p>
             <input type="password" id="confirm-delete-password">
             <input type="submit" id="confirm-delete" value="Confirm Delete User">

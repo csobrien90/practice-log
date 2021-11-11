@@ -16,4 +16,13 @@
     height: 200px;
     display: block;
     resize: none;
+    padding: .5em;
+    font-size: 1em;
+}
+
+@media screen and (min-width: 800px) {
+    main {
+        max-width: 40%;
+    }
+
 }

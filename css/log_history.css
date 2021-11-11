@@ -17,7 +17,16 @@
 }
 
 #log-table td {
-    display: block; 
+    display: block;
+    margin: .2em .5em;
+}
+
+#log-table td:nth-of-type(5n) {
+    margin-bottom: 1em;
+}
+
+#log-table td:nth-of-type(5n+1) {
+    margin-top: 1em;
 }
 
 #log-table td:before {
@@ -27,4 +36,17 @@
 
 #log-table th, #log-table td {
     text-align: left;
+}
+
+@media screen and (min-width: 1250px) {
+    #log-table th, #log-table td {
+        display: table-cell;
+        padding: .5em; 
+        min-width: 190px;
+        vertical-align: top;
+    }
+
+    #log-table td:before {
+        content: unset;
+    }
 }
