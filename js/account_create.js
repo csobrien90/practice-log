@@ -27,8 +27,8 @@ submit.addEventListener("click", (event) => {
                 "password": password.value 
             })
         })
-            .then( res => res.json())
-            .then (data => {
+            .then(res => res.json())
+            .then(data => {
                 message.innerHTML = (data.message);
             });
     }
