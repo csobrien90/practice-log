@@ -34,12 +34,12 @@
     
     //security measures on input
 
-    $username = mysqli_real_escape_string($con, $username);
-    $date = mysqli_real_escape_string($con, $date);
-    $start_time = mysqli_real_escape_string($con, $start_time);
-    $stop_time = mysqli_real_escape_string($con, $stop_time);
-    $total_time = mysqli_real_escape_string($con, $total_time);
-    $notes = mysqli_real_escape_string($con, $notes);
+    $username = mysqli_real_escape_string($con, htmlspecialchars($username, ENT_QUOTES));
+    $date = mysqli_real_escape_string($con, htmlspecialchars($date, ENT_QUOTES));
+    $start_time = mysqli_real_escape_string($con, htmlspecialchars($start_time, ENT_QUOTES));
+    $stop_time = mysqli_real_escape_string($con, htmlspecialchars($stop_time, ENT_QUOTES));
+    $total_time = mysqli_real_escape_string($con, htmlspecialchars($total_time, ENT_QUOTES));
+    $notes = mysqli_real_escape_string($con, htmlspecialchars($notes, ENT_QUOTES));
 
     //query database
 

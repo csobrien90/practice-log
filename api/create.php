@@ -32,10 +32,10 @@
     
     //security measures on input
 
-    $name = mysqli_real_escape_string($con, $name);
-    $email = mysqli_real_escape_string($con, $email);
-    $username = mysqli_real_escape_string($con, $username);
-    $password = mysqli_real_escape_string($con, $password);
+    $name = mysqli_real_escape_string($con, htmlspecialchars($name, ENT_QUOTES));
+    $email = mysqli_real_escape_string($con, htmlspecialchars($email, ENT_QUOTES));
+    $username = mysqli_real_escape_string($con, htmlspecialchars($username, ENT_QUOTES));
+    $password = mysqli_real_escape_string($con, htmlspecialchars($password, ENT_QUOTES));
 
     //query database
 

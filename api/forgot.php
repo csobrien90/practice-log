@@ -27,7 +27,7 @@
 
     //security measures on input
     
-    $email = mysqli_real_escape_string($con, $email);
+    $email = mysqli_real_escape_string($con, htmlspecialchars($email, ENT_QUOTES));
 
     //query database
 

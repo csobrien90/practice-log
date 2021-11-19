@@ -28,8 +28,8 @@
     
     //security measures on input
 
-    $username = mysqli_real_escape_string($con, $username);
-    $password = mysqli_real_escape_string($con, $password);
+    $username = mysqli_real_escape_string($con, htmlspecialchars($username, ENT_QUOTES));
+    $password = mysqli_real_escape_string($con, htmlspecialchars($password, ENT_QUOTES));
     
     //query database
 
