@@ -7,7 +7,7 @@ let password = document.getElementById("password");
 let confirm = document.getElementById("confirm-password");
 let message = document.querySelector('.error-message');
 
-let passwordRegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+let passwordRegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#^@$!%*?&])[A-Za-z\d#^@$!%*?&]{8,}$/
 
 submit.addEventListener("click", (event) => {
     event.preventDefault();
