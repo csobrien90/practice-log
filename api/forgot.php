@@ -44,8 +44,13 @@
     } else {    //send username and password to $email and send page success message
         
         $email_body = "Your login credentials for Practice Log:\n";
-        $email_body .= "username: " . $row['USERNAME'] . "\npassword: " . $row['PASSWORD']; 
+        $email_body .= "username: " . $row['USERNAME'] . "\npassword: " . $row['PASSWORD'];
+        $email_body .= "\n\nThe password above is the encrypted version stored in our database. ";
+        $email_body .= "There is no way to retrieve your original password. If you would like to change ";
+        $email_body .= "your password, use this password to login, delete your account, and create a new account.";
+        
         mail($email, "Practice Log - Password Recovery", $email_body);
+        
         $response["message"] = "Reminder email has been sent";
 
     }

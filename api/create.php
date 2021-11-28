@@ -57,8 +57,8 @@
         $response["message"] = "Username is taken.";
 
     } else {    //else, add new user to database -> success message
-        
-        $sql_add = "INSERT INTO USERS (NAME, EMAIL, USERNAME, PASSWORD) VALUES ('$name','$email','$username','$password');";
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $sql_add = "INSERT INTO USERS (NAME, EMAIL, USERNAME, PASSWORD) VALUES ('$name','$email','$username','$hashed_password');";
         $result = mysqli_query($con, $sql_add);
         
         if ($result) {

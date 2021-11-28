@@ -30,25 +30,29 @@
 
     $username = mysqli_real_escape_string($con, htmlspecialchars($username, ENT_QUOTES));
     $password = mysqli_real_escape_string($con, htmlspecialchars($password, ENT_QUOTES));
-    
+
     //query database
 
-    $sql_exists = "SELECT * FROM USERS WHERE USERNAME='$username' AND PASSWORD='$password'";
-    $result_exists = mysqli_query($con, $sql_exists); 
-
-    $sql_delete = "DELETE FROM USERS WHERE USERNAME='$username' AND PASSWORD='$password'";
-    $result_delete = mysqli_query($con, $sql_delete);
+    $sql_exists = "SELECT * FROM USERS WHERE USERNAME='$username'";
+    $result_username = mysqli_query($con, $sql_exists); 
+    $row = mysqli_fetch_assoc($result_username);
 
     //send back response in $response array:
 
-    if (mysqli_num_rows($result_exists) != 0) {
+    $is_password = password_verify($password, $row["PASSWORD"]);
 
-            $response["message"] = "User account successfully deleted - you will now be automatically logged out";
+    if ($is_password) {
 
-        } else {
+        $sql_delete = "DELETE FROM USERS WHERE USERNAME='$username'";
+        $result_delete = mysqli_query($con, $sql_delete);
+    
+        $response["message"] = "User account successfully deleted - you will now be automatically logged out";
 
-            $response["message"] = "User account deletion failed - incorrect password";
-        }
+    } else {
+
+        $response["message"] = "User account deletion failed - incorrect password";
+    
+    }
 
     echo json_encode($response);
     mysqli_close($con);

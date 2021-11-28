@@ -31,7 +31,9 @@
             </section>
         </div>
         <section id="delete-confirmation">
-            <p id="confirm-delete-message" style="display: none;">Enter your password to confirm you wish to permanently delete this account.</p>
+            <p id="confirm-delete-message" style="display: none;">Enter your password to confirm you wish to 
+                permanently delete this account. Note: To retain stored sessions, create a new account with 
+                the same username.</p>
             <input type="password" id="confirm-delete-password">
             <input type="submit" id="confirm-delete" value="Confirm Delete User">
         </section>

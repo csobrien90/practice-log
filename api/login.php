@@ -30,15 +30,12 @@
 
     $username = mysqli_real_escape_string($con, htmlspecialchars($username, ENT_QUOTES));
     $password = mysqli_real_escape_string($con, htmlspecialchars($password, ENT_QUOTES));
-    
+
     //query database
 
     $sql_username = "SELECT * FROM USERS WHERE USERNAME='$username'";
     $result_username = mysqli_query($con, $sql_username);
-
-    $sql_password = "SELECT * FROM USERS WHERE USERNAME='$username' AND PASSWORD='$password'";
-    $result_password = mysqli_query($con, $sql_password);
-    $row = mysqli_fetch_assoc($result_password);
+    $row = mysqli_fetch_assoc($result_username);
 
     //send back response in $response array:
 
@@ -46,19 +43,26 @@
 
             $response["message"] = "Username not found";
 
-        } else if (mysqli_num_rows($result_password) == 0) {    //if username exists but password does not match
-
-            $response["message"] = "Incorrect password";
-
-        } else {    //if username exists and password matches
+        } else {
             
-            //get basic user data and return in $response
-            $response["user_data"] = [
-                "username" => $row["USERNAME"],
-                "name" => $row["NAME"],
-                "email" => $row["EMAIL"],
-            ];
-            $response["message"] = "Login successful";
+            $is_password = password_verify($password, $row["PASSWORD"]);
+
+            if ($is_password) {
+                //get basic user data and return in $response
+                $response["user_data"] = [
+                    "username" => $row["USERNAME"],
+                    "name" => $row["NAME"],
+                    "email" => $row["EMAIL"],
+                ];
+
+                $response["message"] = "Login successful";
+
+            } else {
+
+                $response["message"] = "Incorrect password";
+            
+            }
+
         }
 
     echo json_encode($response);
