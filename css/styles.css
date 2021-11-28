@@ -153,6 +153,19 @@ input[type='submit'], button, .launch-link {
     margin-bottom: .5em;
 }
 
+.password-span {
+    position: relative;
+}
+
+.show-hide {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    color: black;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
 @media screen and (min-width: 800px) {
     .header-wrapper {
         display: flex;

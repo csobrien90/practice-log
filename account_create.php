@@ -21,8 +21,16 @@
             <span class="input-line"><label for="name">Name:</label><input type="text" id="name" name="name" autocomplete="off" required></input></span>
             <span class="input-line"><label for="email">Email:</label><input type="email" id="email" name="email" autocomplete="off" required></input></span>
             <span class="input-line"><label for="username">Username:</label><input type="text" id="username" name="username" autocomplete="off" required></input></span>
-            <span class="input-line"><label for="password">Password:</label><input type="password" id="password" name="password" autocomplete="off" required></input></span>
-            <span class="input-line"><label for="confirm-password">Confirm Password:</label><input type="password" id="confirm-password" name="confirm-password" autocomplete="off" required></input></span>
+            <span class="input-line password-span">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" autocomplete="off" required></input>
+                <?php include 'password_show_hide.php' ?>
+            </span>
+            <span class="input-line password-span">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" autocomplete="off" required></input>
+                <?php include 'password_show_hide.php' ?>
+            </span>
             <span class="input-line"><input type="submit" id="create-submit"></span>
         </form>
         <p class="error-message"></p>
@@ -36,5 +44,6 @@
 </body>
 
 <script src='js/account_create.js'></script>
+<script src='js/password_show_hide.js'></script>
 
 </html>
