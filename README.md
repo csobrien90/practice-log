@@ -27,11 +27,9 @@ To see this app in action:
 
 *While this app is perfectly functional in its current state, there are several features I intend to implement when I have time.*
 
-- Click an eye icon to show password during input.
 - Store session date as timestamp so ORDER BY 'date' DESC returns most recent dates at top of results table of log history page. Right now, it shows the session in the order you logged them (oldest first).
 - Light/dark mode switch in header. Since I would always have it set on dark mode, I started there. This kind of goes along with...
 - Assess and fix accessibility issues (form input assistance, focus indicators, etc.) I believe this meets most, if not all, AA WCAG standards, but I want to meet as many AAA standards as possible.
-- Increase security with more robust password encryption.
 - Utilize an AWS S3 bucket to allow users to upload a profile picture.
 - Create a logo and favicon. Currently, this site is pretty boring, visually. Of course, this is on the bottom of my features list, but I do hope to get to prettying up the site at some point.
 
