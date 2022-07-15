@@ -4,11 +4,7 @@
 
 ## Use
 
-To see this app in action:
-
-1. go to http://ec2-18-118-16-220.us-east-2.compute.amazonaws.com/
-2. create an account
-3. log and view your sessions
+This app is no longer running
 
 ## JavaScript Features
 
